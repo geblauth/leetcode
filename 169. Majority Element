@@ -1,0 +1,19 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var majorityElement = function(nums) {
+    const hash = {}
+    let majority = 0
+    let res = 0
+
+    for(let i of nums)
+    {
+        hash[i] = 1+(hash[i] || 0)
+        if(hash[i]> majority){
+            res = i
+            majority = hash[i]
+        }
+    }
+    return res
+};
